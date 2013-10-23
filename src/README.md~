@@ -3,3 +3,12 @@ Rough implementation of Chord Ring Protocol. Detailed specifictations about the 
 http://conferences.sigcomm.org/sigcomm/2001/p12-stoica.pdf
 
 Fully functional....beware of the print statements.
+
+Description of classes
+============================================
+
+1: Command handler : This class handles the user input.
+2: Message : Takes care of generating various types of messages 
+3: Chord : Logic for key distribution using consistent hashing
+4: Database : Handles storage.
+5: Functions : All the functions under one hood.
