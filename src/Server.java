@@ -22,20 +22,11 @@ public class Server extends Thread {
 				client=server.accept();
 				BufferedReader br= new BufferedReader(new InputStreamReader(client.getInputStream()));
 				String incoming=br.readLine();
-				//DataInputStream dis= new DataInputStream(client.getInputStream());
-				
-				//byte[] incoming_bytes=new byte[4096];
-				//dis.read(incoming_bytes);
-				//while(br.readLine()!=null) incoming=br.readLine();
-				//incoming= new String(incoming_bytes);
 				br.close();
 				client.close();
 				
 				System.out.println("incoming messag = "+incoming);
 				String[] message=incoming.split(":");
-				
-				
-				
 				if(message[0].equals("request")){
 					System.out.println("request message rxd");
 					try {
