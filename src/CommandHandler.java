@@ -36,24 +36,6 @@ public class CommandHandler extends Thread {
 			}
 			// insert procedure............................
 			else if(cmd.equals("insert")){
-				/*System.out.println("enter the key/file name");
-				String key=null;
-				try {
-					key = Functions.genHash(input.nextLine());
-				} catch (NoSuchAlgorithmException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("enter the value :");
-				String value=null;
-				try {
-					value = Functions.genHash(input.nextLine());
-				} catch (NoSuchAlgorithmException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				Message m= new Message();
-				Functions.forward(m.insert_create(key, value), Database.portno);*/
 				
 				for(int i=0; i< 50 ; i++ ){
 					String key= "key"+i;
@@ -88,6 +70,6 @@ public class CommandHandler extends Thread {
 				Functions.forward(m.query_create("####"), Database.succ_portno);
 				continue;
 			}
-	     }// end of while(true) loop
-	}// end of void run() method..................
-}// end of command handler class
+	     }
+	}
+}
