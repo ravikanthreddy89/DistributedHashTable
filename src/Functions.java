@@ -10,8 +10,6 @@ import java.util.Formatter;
 
 import javax.xml.crypto.Data;
 
-
-
 public class Functions {
 
 	static String genHash(String input) throws NoSuchAlgorithmException {
@@ -30,11 +28,7 @@ public class Functions {
 			result[1]=(byte)((i)&255);
 			return result;
 		}
-		
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		                           /////////// request handler////////////////////////
-		
-		
+
 		static void request_handler(String[] incoming, String incoming_message) throws NoSuchAlgorithmException{
 			
 			
@@ -109,10 +103,6 @@ public class Functions {
 			}
 		
 			}
-			
-			
-			
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//////////               response handler.                   /////////////////////////////////
 		static void response_handler(String[] incoming){
 			System.out.println("response handler invoked.........");
@@ -158,8 +148,6 @@ public class Functions {
 			
 		}
 		
-		
-		
 		static void query_handler(String[] incoming,String incoming_message){
 			System.out.println("query handler invoked............");
 			int remote_portno=0;
@@ -168,7 +156,6 @@ public class Functions {
 			String querystring=null;
 			
 			//case when there it is gdump message......
-			
 			if(incoming[2].equals("####")){
 				
 				querystring=incoming[2];
@@ -195,7 +182,6 @@ public class Functions {
 							
 						}// end of while loop..
 					}// end o fif case
-
 				}
 				
 			}// end of gdump message handling........ 
@@ -221,8 +207,6 @@ public class Functions {
 			}// end of single query handling...............
 			
 		}// end of query handler.......
-		
-		
 		
 		static void queryhit_handler(String[] incoming){
 			System.out.println("query hit invoked...........");
@@ -310,7 +294,6 @@ public class Functions {
 					
 		}
 			
-		
 		// helper functions.........................................
 		static boolean isLessThan(String a, String b){
 			return a.compareTo(b)<0;
