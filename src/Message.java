@@ -17,8 +17,6 @@ public class Message {
 	String insert;
 	
 	public String request_create() {
-		 //request= "req"+":"+ Database.id+":"+Database.portno;
-		//request=Functions.arr2str(req);
 		 request= "request"+":"+Integer.toString(Database.portno);
 		return request;
 	}
@@ -41,16 +39,13 @@ public class Message {
 		//query=Functions.arr2str(qry);
 		return query;
 	}
-	
-	
+
 	public String queryhit_create(String query_string) {
 		
 		queryhit= "queryhit";
-		
 		//send all the values stored in local database..........
 		if(query_string.equals("####")){
 		 java.util.Iterator<String> itr= Database.KeyValues.keySet().iterator();
-		 
 
 		 while(itr.hasNext()){
 			 queryhit=queryhit+":"+Database.KeyValues.get(itr.next());
@@ -75,9 +70,7 @@ public class Message {
 		return queryhit;
 	
 	}
-	
-	
-	
+
 	public String movekeys_create() {
 		System.out.println("movekeys create invoked........");
 		
@@ -111,11 +104,9 @@ public class Message {
 				if(Functions.isLessThan(key, pred_id)) {
 				 //movekeys=movekeys+":"+key+"---"+Database.KeyValues.get(key);
 				 Database.KeyValues.remove(key);
-				 
-				
 			}
 			
-			}
+        		}
 		}
 		else movekeys=movekeys+":"+"####";
 			
@@ -128,6 +119,5 @@ public class Message {
 		return insert;
 		
 	}
-	
-	
+
 }
